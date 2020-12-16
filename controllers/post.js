@@ -19,7 +19,6 @@ exports.getHomePage = async (req, res) => {
     posts,
     userId,
     post,
-    pagination: { currentPage: page, pageTotal: totalPage },
   });
 };
 
