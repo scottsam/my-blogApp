@@ -23,7 +23,6 @@ exports.register = async (req, res) => {
     user.password = await bcrypt.hash(user.password, salt);
 
     await user.save();
-    console.log(user);
 
     res.redirect("/");
   } catch (error) {
