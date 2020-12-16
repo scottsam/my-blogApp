@@ -1,0 +1,63 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Edit Post</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+
+            <form action='/post/{{post._id}}?_method=PUT' method="POST" enctype="multipart/form-data">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Username</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username" value="{{post.username}}" required />
+
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Title</label>
+                        <input type="text" class="form-control" placeholder="Title" name="title" value="{{post.title}}" required />
+
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Description</label>
+                        <input type="text" class="form-control" placeholder="Description" name="description" value="{{post.description}}"required />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Content</label>
+                        <textarea name='content' cols="30" rows="10" class="form-control"
+                            placeholder="Content..." >{{post.content}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <input type="file"  value="{{post.image}}" name="image" class="form-control-file">
+                </div>
+                <br />
+                <div class="form-group my-4 text-center clearfix ">
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">
+                        Save Post
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

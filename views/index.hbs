@@ -1,0 +1,55 @@
+<header class="masthead" style="background-image: url('{{post.image}}');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h2>{{post.title}}</h2>
+              <span class="subheading">{{post.description}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+<!-- Main Content -->
+<div class="container">
+    <h1 class="text-center mb-5">Latest News</h1>
+    <hr>
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {{#each posts}}
+            <div class="post-preview">
+                <div class="tag" style="display: flex; flex-direction:row ; margin-bottom:20px">
+        <a href="post/{{this._id}}"><img  src="{{this.image}}" style="width: 300px;"/></a>
+                <div  style="display: flex; flex-direction:column ; margin: 5px 20px">
+                <a href="post/{{this._id}}">
+                    <h2 class="post-title">
+                        {{this.title}}
+                    </h2>
+                </a>
+                <p class="post-title">
+                    {{this.description}}
+                </p>
+                </div>
+                
+                </div>
+                
+                <p class="post-meta">Posted by
+                    <a href="">{{ this.username }}</a>
+                    on {{ this.createdAt }}
+                </p>
+            </div>
+            <hr>
+            {{/each}}
+            <!-- Pager -->
+            <div class="clearfix">
+                
+                <a class="btn btn-primary float-right" href="/">Older Posts &rarr;</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>

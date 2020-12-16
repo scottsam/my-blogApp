@@ -1,0 +1,44 @@
+<!-- Page Header -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+       {{#if message}}
+            <div class="alert alert-warning  text-center ">
+                <h3>{{message}}</h3>
+            </div>
+
+            {{/if}}
+            <h4>Post your comments</h4>
+            <hr>
+            <form action='/post/comments' method="POST" enctype="multipart/form-data">
+            <input type="hidden"  value="{{post._id}}" name="postId"/>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Username</label>
+                        <input type="text" class="form-control" placeholder="Username" name="username" required />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Comment</label>
+                        <textarea name='comment' cols="10" rows="4" class="form-control"
+                            placeholder="Your comment..."></textarea>
+                    </div>
+                </div>
+                
+                <br />
+                <div class="form-group my-4 text-center clearfix ">
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">
+                        Post Comment
+                    </button>
+                    
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

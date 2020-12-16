@@ -1,0 +1,81 @@
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ post.image }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1>{{ post.title }}</h1>
+                    <span class="meta">Posted by
+                        <a href="#">{{ post.username }}</a>
+                        on {{ post.createdAt }}
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{ post.content }}
+            </div>
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <span class="meta">
+                    <p><strong><em>Written By {{ post.username }}</em></strong></p>
+
+                </span>
+            </div>
+            <br>
+         
+        </div>
+        <br>
+        <br>
+        
+
+        <h6>Comments</h6>
+        {{#each comments}}
+        {{> comment-card}}
+        {{/each}}
+        <br>
+        <br>
+        <br>
+        {{#unless userId}}
+        
+        <p class="nav-item">
+             <a class="nav-link" href="/">Bact to home</a>
+            </p>
+            <br>
+            <br>
+            
+          {{else}}
+        <div class="form-group my-4 text-center clearfix ">
+            <button  class="btn btn-primary" >
+                <a href="/post/{{post._id}}/edit">
+                        Edit Post</a>
+            </button>
+        </div>
+        <div class="form-group my-4 text-center ">
+            <form action='/post/{{post._id}}?_method=DELETE' method="POST" enctype="multipart/form-data">
+            <button  class="btn btn-danger" type="submit">
+                
+                        Delete Post
+            </button>
+            </form>
+            
+        </div>
+        {{/unless}}
+        
+        <br>
+        <br>
+        <br>
+        {{> comment-form}}
+    </div>
+
+</article>
+
+<hr>

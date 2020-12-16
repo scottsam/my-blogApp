@@ -1,0 +1,38 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.16.2"
+  },
+  "description": "Creating a News blog",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "npm install --only=dev && npm install && npm run build"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "bcrypt": "^5.0.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "edge.js": "^1.1.4",
+    "express": "^4.17.1",
+    "express-edge": "^2.0.2",
+    "express-fileupload": "^1.1.7-alpha.3",
+    "express-handlebars": "^4.0.4",
+    "express-handlebars-paginate": "^1.0.3",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.21",
+    "startbootstrap-clean-blog": "^5.0.9"
+  },
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  }
+}
