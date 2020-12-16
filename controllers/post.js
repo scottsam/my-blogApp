@@ -1,5 +1,5 @@
 const Post = require("../models/Post");
-const Comment = require("../models/Comment");
+const Comment = require("../models/comment");
 const path = require("path");
 
 exports.getHomePage = async (req, res) => {
