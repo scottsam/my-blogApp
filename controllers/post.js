@@ -70,12 +70,13 @@ exports.createPost = async (req, res) => {
     if (err) {
       res.status(500).render("create", { message: "Something went wrong!" });
     }
-  });
-  const post = await Post.create({
+    const post = await Post.create({
     ...req.body,
     image: `/img/${imgFile.name}`,
   });
   res.redirect("/");
+  });
+  
 
   //image.mv(path.resolve(__dirname, "/uploads", image.name), (error) => {
   //Post.create(
