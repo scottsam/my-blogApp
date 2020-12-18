@@ -7,13 +7,15 @@ const {
   deletePost,
   getAuthenticatedPost,
   createPost,
+  landingPage,
 } = require("../controllers/post");
 
 const router = express.Router();
 const auth = require("../middleware/auth");
 
 //geting all the post...
-router.get("/", getHomePage);
+router.get("/home", getHomePage);
+router.get("/", landingPage);
 
 router.get("/post/:id", getSinglePost);
 

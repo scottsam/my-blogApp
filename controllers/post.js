@@ -2,6 +2,10 @@ const Post = require("../models/Post");
 const Comment = require("../models/comment");
 const path = require("path");
 
+exports.landingPage = async (req, res) => {
+  res.render("landing", { layout: false });
+};
+
 exports.getHomePage = async (req, res) => {
   //let page = parseInt(req.query.page);
   //let limit = 4;
@@ -66,17 +70,16 @@ exports.createPost = async (req, res) => {
   let subPath = __dirname.slice(0, 28);
   let imgPath = path.join(subPath, "public", "img", imgFile.name);
 
-  imgFile.mv(imgPath, (err) => {
+  imgFile.mv(imgPath, async (err) => {
     if (err) {
       res.status(500).render("create", { message: "Something went wrong!" });
     }
     const post = await Post.create({
-    ...req.body,
-    image: `/img/${imgFile.name}`,
+      ...req.body,
+      image: `/img/${imgFile.name}`,
+    });
+    res.redirect("/");
   });
-  res.redirect("/");
-  });
-  
 
   //image.mv(path.resolve(__dirname, "/uploads", image.name), (error) => {
   //Post.create(

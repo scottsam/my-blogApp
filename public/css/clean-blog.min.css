@@ -357,3 +357,44 @@ footer .copyright {
   font-size: 16px;
   padding: 25px 35px;
 }
+
+.hero {
+  height: 100vh;
+  background: url("../img/contact-bg.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+  background: rgba(55, 76, 97, 0.8);
+  display: inline-block;
+  padding: 3rem;
+  width: 100%;
+  height: 100vh;
+}
+.banner-title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-bottom: 3rem;
+  color: #fff;
+}
+
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  background: rgb(230, 153, 123);
+  font-size: 1rem;
+  border: 1px solid rgb(97, 164, 226);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  background: transparent;
+  color: coral;
+  font-weight: 600;
+}
