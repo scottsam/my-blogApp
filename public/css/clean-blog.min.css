@@ -359,7 +359,6 @@ footer .copyright {
 }
 
 .hero {
-  height: 100vh;
   background: url("../img/contact-bg.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -371,8 +370,8 @@ footer .copyright {
   background: rgba(55, 76, 97, 0.8);
   display: inline-block;
   padding: 3rem;
-  width: 100%;
-  height: 100vh;
+  width: 4000px;
+  height: 110vh;
 }
 .banner-title {
   font-size: 4rem;
